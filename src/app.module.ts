@@ -11,6 +11,7 @@ import { EventEmitterModule } from '@nestjs/event-emitter';
 import { ScheduleModule } from '@nestjs/schedule';
 // import { TestModule } from './test/test.module';
 import { TranslateModule } from './translate/translate.module';
+import { OgimageModule } from './ogimage/ogimage.module';
 
 @Module({
 	imports: [
@@ -25,6 +26,7 @@ import { TranslateModule } from './translate/translate.module';
 			delimiter: '.',
 		}),
 		TranslateModule,
+		OgimageModule,
 	],
 	providers: [
 		{
