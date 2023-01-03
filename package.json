@@ -1,10 +1,10 @@
 {
-  "name": "splitmulti-marketplace",
+  "name": "ndigboservice",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "g'OZieCHUKWU",
   "private": true,
-  "license": "ClarkCoulson",
+  "license": "",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
