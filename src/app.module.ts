@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import * as connectionOptions from '../ormconfig';
+// import * as connectionOptions from '../ormconfig';
 import { ConfigModule } from '@nestjs/config';
 import { RouterModule } from 'nest-router';
 import { routes } from './routes';
@@ -20,7 +20,7 @@ import { OgimageModule } from './ogimage/ogimage.module';
 		}),
 		RouterModule.forRoutes(routes),
 		ScheduleModule.forRoot(),
-		TypeOrmModule.forRoot(connectionOptions),
+		// TypeOrmModule.forRoot(connectionOptions),
 		EventEmitterModule.forRoot({
 			wildcard: true,
 			delimiter: '.',
