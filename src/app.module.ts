@@ -9,12 +9,18 @@ import { HttpExceptionFilter } from './common/Exception-Filters/http-exception.f
 import { ModelExceptionFilter } from './common/Exception-Filters/model-exception.filter';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { ScheduleModule } from '@nestjs/schedule';
-// import { TestModule } from './test/test.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 import { TranslateModule } from './translate/translate.module';
 import { OgimageModule } from './ogimage/ogimage.module';
 
 @Module({
 	imports: [
+		ServeStaticModule.forRoot({
+			rootPath: join(__dirname, '..', '.well-known/pki-validation'),
+			serveRoot: '/.well-known/pki-validation'
+		}),
+		// ServeStaticModule.forRoot({rootPath: '/media/avatar', serveRoot: '/avatar'}),
 		ConfigModule.forRoot({
 			isGlobal: true,
 		}),

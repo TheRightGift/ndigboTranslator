@@ -5,9 +5,19 @@ import { AppModule } from './app.module';
 import { EnvService } from './common/env.service';
 import { HttpExceptionFilter } from './common/Exception-Filters/http-exception.filter';
 import { ModelExceptionFilter } from './common/Exception-Filters/model-exception.filter';
+import * as fs from 'fs';
+const path = require('path');
 
 async function bootstrap() {
   const env = new EnvService().read();
+  // const httpsOptions = {
+  //   key: fs.readFileSync(path.resolve(__dirname, '../secrets/key.pem'), 'utf8'),
+  //   cert: fs.readFileSync(path.resolve(__dirname, './secrets/cert.pem'), 'utf8')
+  // }
+  // const app = await NestFactory.create(AppModule, {
+  //   httpsOptions,
+  // });
+
   const app = await NestFactory.create(AppModule);
 
   
